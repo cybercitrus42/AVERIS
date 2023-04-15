@@ -1,2 +1,2 @@
 # AVERIS
-Automatic Viedo Encoder Rendering Interpretation in Sign
+Automatic Video Encoder Rendering Interpretation in Sign
