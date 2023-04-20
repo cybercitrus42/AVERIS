@@ -1,7 +1,13 @@
 
 from tkinter import *
 import tkinter.messagebox
+from VideoFinder import Finder
 root = Tk()
+import urllib.request
+import urllib.parse
+import re
+import urllib
+
 
 textBox = Entry(root, width=50)
 textBox.pack()
@@ -26,12 +32,14 @@ class Window(Frame): #defines window hahahahh
         exit()
 
     def clickHelloButton(self): 
-        #tkinter.messagebox.showinfo("winner")
-        Search = Label(root, text = textBox.get())
-        Search.pack()
-        #tkinter.messagebox.showinfo("Fruit List!!", readFruitContents)
-        #tkinter.messagebox.showinfo("Fruit List", random_line('fruitList.txt'))
-
+        search_query = textBox.get()
+        Finder(search_query)
+         
+         #Answer = Label(root, text = textBox.get())
+         #Answer.pack()
+         #return Finder(Answer)
+        
+        
 
 app = Window(root)
 root.wm_title("Tkinter window") #names the window
