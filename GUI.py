@@ -19,9 +19,9 @@ class Window(Frame): #defines window hahahahh
 
         self.pack(fill=BOTH, expand=1)
 
-        #exitButton = Button(self, text="Exit", command=self.clickExitButton)
+        exitButton = Button(self, text="Exit", command=self.clickExitButton)
         
-        #exitButton.place(x=0, y=0)
+        exitButton.place(x=0, y=0)
 
         helloButton = Button(self, text="What would you like to learn?", command=self.clickHelloButton)
 
