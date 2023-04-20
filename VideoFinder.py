@@ -18,6 +18,9 @@ def Finder(Search):
         linkFile.write(videoURL + "\n")
     linkFile.close()
 
+def Clear():
+    linkFile2 = open('URLLinks.txt', 'r+')
+    linkFile2.truncate(0) # need '0' when using r+
 
 
 

@@ -1,7 +1,7 @@
 
 from tkinter import *
 import tkinter.messagebox
-from VideoFinder import Finder
+from VideoFinder import *
 root = Tk()
 import urllib.request
 import urllib.parse
@@ -23,6 +23,10 @@ class Window(Frame): #defines window hahahahh
         
         exitButton.place(x=0, y=0)
 
+        clearButton = Button(self, text="Clear", command=self.clickClearButton)
+        
+        clearButton.place(x=0, y=20)
+
         helloButton = Button(self, text="What would you like to learn?", command=self.clickHelloButton)
 
         helloButton.place(x=42, y=57)
@@ -34,14 +38,14 @@ class Window(Frame): #defines window hahahahh
     def clickHelloButton(self): 
         search_query = textBox.get()
         Finder(search_query)
+    
+    def clickClearButton(self):
+        return Clear()
          
-         #Answer = Label(root, text = textBox.get())
-         #Answer.pack()
-         #return Finder(Answer)
         
         
 
 app = Window(root)
-root.wm_title("Tkinter window") #names the window
+root.wm_title("AVERIS") #names the window
 root.geometry("320x200")
 root.mainloop()
