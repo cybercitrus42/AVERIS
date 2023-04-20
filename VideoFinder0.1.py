@@ -1,5 +1,5 @@
 
-import vlc
+#import vlc
 import urllib.request
 import re
 import urllib
@@ -16,16 +16,11 @@ html = urllib.request.urlopen(URL)
 videoIds = re.findall(r"watch\?v=(\S{11})", html.read().decode())
 videoURL = ("https://youtube.com/watch?v=" + videoIds[0])
 
-video = pafy.new(videoURL)
-best = video.getbest()
-playurl = best.url
+linkFile = open("URLLinks.txt", "a")
+linkFile.write(videoURL)
+linkFile.close()
 
-Instance = vlc.Instance()
-player = Instance.media_player_new()
-Media = Instance.media_player_new(playurl)
-Media.get_mrl()
-player.set_media(Media)
-player.play()
+
 
 #player = vlc.MediaPlayer(videoURL)
 #player.play()
