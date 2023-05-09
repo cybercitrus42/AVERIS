@@ -7,6 +7,8 @@ import urllib.request
 import urllib.parse
 import re
 import urllib
+from VideoDownloader import *
+import time
 
 
 textBox = Entry(root, width=50)
@@ -38,6 +40,8 @@ class Window(Frame): #defines window hahahahh
     def clickHelloButton(self): 
         search_query = textBox.get()
         Finder(search_query)
+        time.sleep(0.7)
+        return Downloader()
     
     def clickClearButton(self):
         return Clear()
