@@ -3,6 +3,7 @@
 import urllib.request
 import re
 import urllib
+import os
 
 def splitSentence(sentence):
     return re.findall(r"\b\w+\b", sentence)
@@ -11,7 +12,6 @@ def splitSentence(sentence):
 def Finder(Search):
     words = splitSentence(Search)
     for word in words:
-
     # Properly encode search query
         signSearch = urllib.parse.quote(word + " asl dictionary")
         URL = f'https://youtube.com/results?search_query={signSearch}'
@@ -30,7 +30,14 @@ def Finder(Search):
 
 def Clear():
     linkFile2 = open('URLLinks.txt', 'r+')
-    linkFile2.truncate(0) # need '0' when using r+
+    linkFile2.truncate(0)
+    linkFile2.close()  # Close the file after truncating
+    
+    directory = r"C:\Users\iamsa\Desktop\Code\AVERIS\VideoFiles"  # Raw string to handle backslashes
+    for f in os.listdir(directory):
+        if f.endswith(".mp4"):
+            file_path = os.path.join(directory, f)
+            os.remove(file_path)
 
 
 
