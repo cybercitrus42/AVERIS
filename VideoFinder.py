@@ -4,6 +4,9 @@ import urllib.request
 import re
 import urllib
 import os
+import cv2
+from VideoDownloader import *
+
 
 def splitSentence(sentence):
     return re.findall(r"\b\w+\b", sentence)
@@ -11,6 +14,7 @@ def splitSentence(sentence):
 
 def Finder(Search):
     words = splitSentence(Search)
+    
     for word in words:
     # Properly encode search query
         signSearch = urllib.parse.quote(word + " asl dictionary")
@@ -24,7 +28,19 @@ def Finder(Search):
             linkFile.write(videoURL + "\n")
         linkFile.close()
 
-    
+def Player():
+    cap = cv2.VideoCapture(r"C:\Users\iamsa\Desktop\Code\AVERIS\VideoFiles\ *.mp4")
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
+        cv2.imshow('frame', frame)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+    cap.release()
+    cv2.destroyAllWindows()
+        
+
     
 
 
@@ -32,7 +48,7 @@ def Clear():
     linkFile2 = open('URLLinks.txt', 'r+')
     linkFile2.truncate(0)
     linkFile2.close()  # Close the file after truncating
-    
+
     directory = r"C:\Users\iamsa\Desktop\Code\AVERIS\VideoFiles"  # Raw string to handle backslashes
     for f in os.listdir(directory):
         if f.endswith(".mp4"):

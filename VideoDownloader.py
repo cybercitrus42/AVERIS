@@ -1,10 +1,10 @@
 from pytube import YouTube
 
 savePath = r"C:\Users\iamsa\Desktop\Code\AVERIS\VideoFiles"
-
-with open("URLLinks.txt", "r") as link:
-    for i in link:
-        try:
+def Downloader():
+    with open("URLLinks.txt", "r") as link:
+        for i in link:
+         try:
             # Create a YouTube object
             yt = YouTube(i)
 
@@ -17,7 +17,8 @@ with open("URLLinks.txt", "r") as link:
             # Download the video
             d_video.download(savePath)
             print("Download completed for:", i)
-        except Exception as e:
-            print("Error occurred:", str(e))
+         except Exception as e:
+              print("Error occurred:", str(e))
 
+Downloader()
 print('Task Completed!')

@@ -9,7 +9,7 @@ import re
 import urllib
 from VideoDownloader import *
 import time
-
+from VideoPlayer import *
 
 textBox = Entry(root, width=50)
 textBox.pack()
@@ -33,6 +33,8 @@ class Window(Frame): #defines window hahahahh
 
         helloButton.place(x=42, y=57)
 
+    
+
 
     def clickExitButton(self):
         exit()
@@ -42,11 +44,19 @@ class Window(Frame): #defines window hahahahh
         Finder(search_query)
         time.sleep(0.7)
         return Downloader()
+        time.sleep(7) 
+        #return Player()
+        self.LoadingScreen
     
     def clickClearButton(self):
         return Clear()
          
-        
+def loading_screen(self):
+        loading_screen = Toplevel(root)
+        loading_screen.title("Loading Screen")
+        loading_screen.geometry("200x200")
+        label = Label(loading_screen, text="This is a loading screen")
+        label.pack()
         
 
 app = Window(root)
