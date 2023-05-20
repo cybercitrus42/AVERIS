@@ -1,5 +1,6 @@
 
 #import vlc
+#import vlc
 import urllib.request
 import re
 import urllib
@@ -28,17 +29,7 @@ def Finder(Search):
             linkFile.write(videoURL + "\n")
         linkFile.close()
 
-def Player():
-    cap = cv2.VideoCapture(r"C:\Users\iamsa\Desktop\Code\AVERIS\VideoFiles\ *.mp4")
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
-        cv2.imshow('frame', frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-    cap.release()
-    cv2.destroyAllWindows()
+
         
 
     
@@ -55,13 +46,3 @@ def Clear():
             file_path = os.path.join(directory, f)
             os.remove(file_path)
 
-
-
-
-
-#player = vlc.MediaPlayer(videoURL)
-#player.play()
-
-#print(htmlContent)
-#above print leads to literal hundreds of lines of class \n
-#i think its the full HTML of the search page
