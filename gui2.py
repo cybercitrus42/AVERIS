@@ -68,7 +68,8 @@ class Window(Frame): #defines window hahahahh
         return Clear()
          
 def hasMp4File():
-    folder_path = r"C:\Users\iamsa\Desktop\Code\AVERIS\VideoFiles"  
+    folder_path = "C:\" 
+    #filepath here  
     files = os.listdir(folder_path)
     for file in files:
         if file.endswith(".mp4"):
