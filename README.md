@@ -1,5 +1,6 @@
 # AVERIS
 Automatic Video Encoder Rendering Interpretation in Sign
+
 The goal of this project is a search tool that generates a one-to-one direct American Sign Language (ASL) translation in the form in a video in a singular program.
 
 HOW IT WORKS:
