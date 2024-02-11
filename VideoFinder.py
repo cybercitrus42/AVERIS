@@ -40,7 +40,8 @@ def Clear():
     linkFile2.truncate(0)
     linkFile2.close()  # Close the file after truncating
 
-    directory = r"C:\Users\iamsa\Desktop\Code\AVERIS\VideoFiles"  # Raw string to handle backslashes
+    directory = r"C: "
+     # Raw string to handle backslashes, place filepath here
     for f in os.listdir(directory):
         if f.endswith(".mp4"):
             file_path = os.path.join(directory, f)
