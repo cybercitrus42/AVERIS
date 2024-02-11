@@ -2,7 +2,7 @@ import os
 import cv2
 
 def Player():
-    folderPath = r"C:\Users\iamsa\Desktop\Code\AVERIS\VideoFiles"
+    folderPath = "C:"#file path here
     fileList = os.listdir(folderPath)
     videoFiles = [file for file in fileList if file.endswith(".mp4")]
     
