@@ -1,6 +1,7 @@
 from pytube import YouTube
 
-savePath = r"C:\Users\iamsa\Desktop\Code\AVERIS\VideoFiles"
+#your file path here
+savePath = r"C:\" 
 def Downloader():
     with open("URLLinks.txt", "r") as link:
         for i in link:
